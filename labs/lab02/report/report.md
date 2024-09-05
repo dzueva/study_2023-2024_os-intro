@@ -85,9 +85,62 @@ header-includes:
 
 # Выполнение лабораторной работы
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию (рис. [-@fig:001]).
+## 1. Базовая настройка git
+Для самой базовой настройки нужно выполнить следующий ряд команд:
+```shell
+git config --global user.name "dtzueva"
+git config --global user.email "mariazuevi204@gmail.com"
+git config --global core.quotepath false
+git config --global init.defaultBranch master
+git config --global core.autocrlf true
+git config --global core.autocrlf input
+git config --global core.safecrlf warn
+```
+![Базовая настройка git](image/img1_1.png){#fig:001 width=70%}
+## 2. Создание ключа ssh
+Создание ключей ssh возможно при помощи многих алгоритмов, например с алгоритмом rsa и размером 4096 
+(современный стандарт безопасности) и с алгоритмом ed25519
+![Создание ssh ключа](image/img2_1.png){#fig:001 width=70%}
 
-![Название рисунка](image/placeimg_800_600_tech.jpg){#fig:001 width=70%}
+## 3. Добавление ssh ключа в Github
+Для начала регистрирую новую учетную запись в github. Затем, после всего нужного ряда действий, добавляем ssh ключ в Github.
+![Добавление ключа в Github](image/img3_1.png){#fig:001 width=70%}
+
+## 4. Создание GPG ключа
+При создании ключа используется команда `gpg --full-generate-key`, после которой можно настроить автоматическую подпись коммитов git.
+![Начало создание GPG ключа](image/img4_1.png){#fig:001 width=70%}
+![Задание фразы-пароля после указания параметров ключа](image/img4_2.png){#fig:001 width=70%}
+![Результат создания ключа](image/img4_3.png){#fig:001 width=70%}
+
+## 5. Добавление GPG ключа на Github 
+Выведем список всех gpg ключей:
+![Список ключей GPG](image/img5_1.png){#fig:001 width=70%}
+Добавим нужный ключ на Github аналогично ключу ssh.
+![Добавленный на Github GPG ключ](image/img5_2.png){#fig:001 width=70%}
+
+## 6. Настройка автоматических подписей коммитов git
+Для настройки автоматических подписей коммитов надо выполнить следующий ряд комманд:
+```shell
+git config --global user.signingkey DE2E4800C8D9DE5E
+git config --global commit.gpgsign true
+git config --global gpg.program $(which gpg2)
+```
+
+## 7. Настройка gh
+![Процесс авторизации в Github](image/img7_1.png){#fig:001 width=70%}
+![Авторизация через gh](image/img7_2.png){#fig:001 width=70%}
+
+## 8. Создание репозитория курса на основе шаблона
+Создадим новый репозиторий на основе шаблона.
+![Создание репозитория на основе шаблона](image/img8_1.png){#fig:001 width=70%}
+![Создание репозитория локально](image/img8_2.png){#fig:001 width=70%}
+![Итог копирования](image/img8_3.png){#fig:001 width=70%}
+
+## 9. Настройка каталога курса
+Настроим каталог курса по средствам удаления и модифицирования файлов.
+![Модифицирование репозитория](image/img9_1.png){#fig:001 width=70%}
+![Отправка на удаленный сервер](image/img9_2.png){#fig:001 width=70%}
+![Именения на удаленном сервере](image/img9_3.png){#fig:001 width=70%}
 
 ## 10. Контрольные вопросы
 ### 1. Что такое системы контроля версий (VCS) и для решения каких задач они предназначаются?
