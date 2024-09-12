@@ -1,3 +1,4 @@
+
 ---
 ## Front matter
 title: "Отчёт по лабораторной работе №10"
@@ -9,8 +10,8 @@ lang: ru-RU
 toc-title: "Содержание"
 
 ## Bibliography
-bibliography: bib/cite.bib
-csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
+#bibliography: bib/cite.bib
+#csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
 
 ## Pdf output format
 toc: true # Table of contents
@@ -147,8 +148,3 @@ header-includes:
 # Выводы
 
 В ходе лабораторной работы изучила основы программирования в оболочке ОС UNIX. Научится писать более сложные командные файлы с использованием логических управляющих конструкций и циклов.
-
-# Список литературы{.unnumbered}
-
-::: {#refs}
-:::
